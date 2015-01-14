@@ -55,8 +55,16 @@ public class PictureTester
     /** Method to test the collage method */
     public static void testCollage()
     {
+        
         Picture canvas = new Picture("640x480.jpg");
         canvas.createCollage();
+        canvas.explore();
+    }
+    
+    public static void testCollage2()
+    {
+        Picture canvas = new Picture("640x480.jpg");
+        canvas.createCollage2();
         canvas.explore();
     }
 

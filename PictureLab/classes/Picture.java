@@ -98,14 +98,9 @@ public class Picture extends SimplePicture
         }
     }
     
-    public void copy( Picture sourcePicture, int startSourceRow, int endSourceRow, int startSourceCol, int endSourceCol,
-         int startDestRow, int startDestCol ){
-            
-             
-             
-             
-            }
-    
+    public void mirrorVertical()
+    {
+        
 
     /** Method that mirrors the picture around a 
      * vertical mirror in the center of the picture
@@ -236,6 +231,12 @@ public class Picture extends SimplePicture
         this.copy(flower2,500,0);
         this.mirrorVertical();
         this.write("collage.jpg");
+    }
+    
+    public void createCollage2()
+    {
+        Picture alpaca = new Picture("alpaca.jpg");
+        this.copy(alpaca,10,10);
     }
 
     /** Method to show large changes in color 
