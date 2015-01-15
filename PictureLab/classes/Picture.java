@@ -84,6 +84,55 @@ public class Picture extends SimplePicture
         return output;
 
     }
+    
+    public void keepOnlyBlue()
+    {
+        Pixel[][] pixels = this.getPixels2D();
+        for (Pixel[] rowArray : pixels)
+        {
+            for (Pixel pixelObj : rowArray)
+            {
+                pixelObj.setRed(0);
+                pixelObj.setGreen(0);
+            }
+        }
+    }
+    
+    public void fixWater()
+    {
+        Pixel[][] pixels = this.getPixels2D();
+        for (Pixel[] rowArray : pixels)
+        {
+            for (Pixel pixelObj : rowArray)
+            {
+                int num = pixelObj.getRed();
+                int num2 = pixelObj.getBlue();
+                int num3 = pixelObj.getGreen();
+                pixelObj.setRed(num*3);
+                pixelObj.setBlue(num2/2);
+                pixelObj.setGreen(num3/2);
+            }
+        }
+    }
+    
+    public void grayScale()
+    {
+        Pixel[][] pixels = this.getPixels2D();
+        for (Pixel[] rowArray : pixels)
+        {
+            for (Pixel pixelObj : rowArray)
+            {
+                int g = pixelObj.getGreen();
+                int r = pixelObj.getRed();
+                int b = pixelObj.getBlue();
+                int color = (g+r+b)/3;
+                pixelObj.setRed(color);
+                pixelObj.setBlue(color);
+                pixelObj.setGreen(color);
+            }
+        }
+    }
+        
 
     /** Method to set the blue to 0 */
     public void zeroBlue()
@@ -98,10 +147,6 @@ public class Picture extends SimplePicture
         }
     }
     
-    public void mirrorVertical()
-    {
-        
-
     /** Method that mirrors the picture around a 
      * vertical mirror in the center of the picture
      * from left to right */

@@ -16,6 +16,33 @@ public class PictureTester
         beach.zeroBlue();
         beach.explore();
     }
+    
+    /** Method to test OnlyBlue */
+    public static void testOnlyBlue()
+    {
+        Picture red = new Picture("beach.jpg");
+        red.explore();
+        red.keepOnlyBlue();
+        red.explore();
+    }
+    
+    /** Method to test zeroBlue */
+    public static void testGrayScale()
+    {
+        Picture red = new Picture("beach.jpg");
+        red.explore();
+        red.grayScale();
+        red.explore();
+    }
+    
+    /** Method to test zeroBlue */
+    public static void testfixWater()
+    {
+        Picture beach = new Picture("water.jpg");
+        beach.explore();
+        beach.fixWater();
+        beach.explore();
+    }
 
     /** Method to test mirrorVertical */
     public static void testMirrorVertical()
