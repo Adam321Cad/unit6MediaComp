@@ -84,7 +84,7 @@ public class Picture extends SimplePicture
         return output;
 
     }
-    
+
     public void keepOnlyBlue()
     {
         Pixel[][] pixels = this.getPixels2D();
@@ -97,7 +97,7 @@ public class Picture extends SimplePicture
             }
         }
     }
-    
+
     public void fixWater()
     {
         Pixel[][] pixels = this.getPixels2D();
@@ -114,7 +114,7 @@ public class Picture extends SimplePicture
             }
         }
     }
-    
+
     public void grayScale()
     {
         Pixel[][] pixels = this.getPixels2D();
@@ -132,7 +132,6 @@ public class Picture extends SimplePicture
             }
         }
     }
-        
 
     /** Method to set the blue to 0 */
     public void zeroBlue()
@@ -146,7 +145,7 @@ public class Picture extends SimplePicture
             }
         }
     }
-    
+
     /** Method that mirrors the picture around a 
      * vertical mirror in the center of the picture
      * from left to right */
@@ -204,6 +203,19 @@ public class Picture extends SimplePicture
             }
         }
 
+    }
+
+    public Picture shrink(Picture a,double x,double y)
+    {
+        //Picture smallP = a.scale(0.25,0.25);
+        Picture smallP = a.scale(x,y);
+        return smallP;
+    }
+
+    public void smallAplaca()
+    {
+        Picture alpaca = new Picture("alpaca.jpg");
+        alpaca.equals(this.shrink(alpaca, 0.1, 0.1));
     }
 
     /** Mirror just part of a picture of a temple */
@@ -277,7 +289,7 @@ public class Picture extends SimplePicture
         this.mirrorVertical();
         this.write("collage.jpg");
     }
-    
+
     public void createCollage2()
     {
         Picture alpaca = new Picture("alpaca.jpg");

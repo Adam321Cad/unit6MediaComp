@@ -16,7 +16,7 @@ public class PictureTester
         beach.zeroBlue();
         beach.explore();
     }
-    
+
     /** Method to test OnlyBlue */
     public static void testOnlyBlue()
     {
@@ -25,7 +25,7 @@ public class PictureTester
         red.keepOnlyBlue();
         red.explore();
     }
-    
+
     /** Method to test zeroBlue */
     public static void testGrayScale()
     {
@@ -34,7 +34,9 @@ public class PictureTester
         red.grayScale();
         red.explore();
     }
-    
+
+
+
     /** Method to test zeroBlue */
     public static void testfixWater()
     {
@@ -42,6 +44,18 @@ public class PictureTester
         beach.explore();
         beach.fixWater();
         beach.explore();
+    }
+
+    
+    /** Method to test zeroBlue */
+    public static void testsmallAplaca()
+    {
+        Picture alpaca= new Picture("Alpaca.jpg");
+        alpaca.explore();
+        alpaca.equals(alpaca.scale(0.25,0.25));
+        Picture smallP = alpaca.scale(0.25,0.25);
+        //smallP.write("smallMyPicture.jpg"); 
+        smallP.explore();
     }
 
     /** Method to test mirrorVertical */
@@ -69,7 +83,7 @@ public class PictureTester
         temple.mirrorTemple();
         temple.explore();
     }
-    
+
     /** Method to test mirrorDiagnal */
     public static void testMirrorDiagonal()
     {
@@ -82,12 +96,14 @@ public class PictureTester
     /** Method to test the collage method */
     public static void testCollage()
     {
-        
+
         Picture canvas = new Picture("640x480.jpg");
         canvas.createCollage();
         canvas.explore();
     }
     
+    
+
     public static void testCollage2()
     {
         Picture canvas = new Picture("640x480.jpg");
