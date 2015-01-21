@@ -36,7 +36,6 @@ public class PictureTester
     }
 
 
-
     /** Method to test zeroBlue */
     public static void testfixWater()
     {
@@ -46,13 +45,12 @@ public class PictureTester
         beach.explore();
     }
 
-    
     /** Method to test zeroBlue */
     public static void testsmallAplaca()
     {
         Picture alpaca= new Picture("Alpaca.jpg");
         alpaca.explore();
-        alpaca.equals(alpaca.scale(0.25,0.25));
+        //alpaca.equals(alpaca.scale(0.25,0.25));
         Picture smallP = alpaca.scale(0.25,0.25);
         //smallP.write("smallMyPicture.jpg"); 
         smallP.explore();
@@ -101,8 +99,7 @@ public class PictureTester
         canvas.createCollage();
         canvas.explore();
     }
-    
-    
+
 
     public static void testCollage2()
     {
@@ -117,6 +114,16 @@ public class PictureTester
         Picture swan = new Picture("swan.jpg");
         swan.edgeDetection(10);
         swan.explore();
+    }
+
+    public static void Collage()
+    {
+        Picture canvas = new Picture(800, 800);
+        Picture alpaca = new Picture("alpaca.jpg");
+        alpaca = alpaca.scale(0.25,0.25);
+        alpaca.explore();
+        canvas.equals(canvas.paste(canvas, alpaca,50,50));
+        canvas.explore();
     }
 
     /** Main method for testing.  Every class can have a main

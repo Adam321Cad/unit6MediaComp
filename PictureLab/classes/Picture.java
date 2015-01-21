@@ -321,6 +321,25 @@ public class Picture extends SimplePicture
             }
         }
     }
+    
+    public Picture paste(Picture white, Picture a, int x, int y)
+    {
+        Pixel leftPixel = null;
+        Pixel rightPixel = null;
+        Pixel[][] pixels = white.getPixels2D();
+        Pixel[][] pixels1 = a.getPixels2D();
+        int width = pixels1[0].length;
+        for(int i = x;i<pixels1.length; i++)
+        {
+            for(int j = y; j<width; j++)
+            {
+                pixels[i][j].setColor(pixels1[i-x][j-y].getColor());
+            }
+        }
+        return white;
+    }
+    
+
 
     /* Main method for testing - each class in Java can have a main 
      * method 
@@ -331,6 +350,7 @@ public class Picture extends SimplePicture
         beach.explore();
         beach.zeroBlue();
         beach.explore();
+       
     }
 
 } // this } is the end of class Picture, put all new methods before this
