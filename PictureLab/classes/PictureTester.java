@@ -122,7 +122,7 @@ public class PictureTester
         Picture alpaca = new Picture("alpaca.jpg");
         alpaca = alpaca.scale(0.25,0.25);
         alpaca.explore();
-        canvas.equals(canvas.paste(canvas, alpaca,50,50));
+        canvas.equals(canvas.paste(canvas, alpaca,200,200));
         canvas.explore();
     }
 

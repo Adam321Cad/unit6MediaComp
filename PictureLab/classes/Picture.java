@@ -322,6 +322,7 @@ public class Picture extends SimplePicture
         }
     }
     
+    /*
     public Picture paste(Picture white, Picture a, int x, int y)
     {
         Pixel leftPixel = null;
@@ -329,15 +330,35 @@ public class Picture extends SimplePicture
         Pixel[][] pixels = white.getPixels2D();
         Pixel[][] pixels1 = a.getPixels2D();
         int width = pixels1[0].length;
-        for(int i = x;i<pixels1.length; i++)
+        for(int i = 0;i<pixels1.length || i<pixels.length; i++)
         {
-            for(int j = y; j<width; j++)
+            for(int j = 0; j<width || j<pixels[0].length; j++)
+            {
+                pixels[i][j].setColor(pixels1[j][i].getColor());
+            }
+        }
+        return white;
+    }
+    */
+    
+    public Picture paste(Picture white, Picture a, int x, int y)
+    {
+        Pixel leftPixel = null;
+        Pixel rightPixel = null;
+        Pixel[][] pixels = white.getPixels2D();
+        Pixel[][] pixels1 = a.getPixels2D();
+        int width = pixels1[0].length;
+        for(int i = x;i<pixels1.length+x; i++)
+        {
+            for(int j = y; j<width+y; j++)
             {
                 pixels[i][j].setColor(pixels1[i-x][j-y].getColor());
             }
         }
         return white;
     }
+    
+    
     
 
 
