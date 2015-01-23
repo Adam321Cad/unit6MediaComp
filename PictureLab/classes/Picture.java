@@ -115,6 +115,77 @@ public class Picture extends SimplePicture
         }
     }
 
+    public void SwitchColors()
+    {
+        Pixel[][] pixels = this.getPixels2D();
+        for (Pixel[] rowArray : pixels)
+        {
+            for (Pixel pixelObj : rowArray)
+            {
+                int num = pixelObj.getRed();
+                int num2 = pixelObj.getGreen();
+                int num3 = pixelObj.getBlue();
+                pixelObj.setRed(num3);
+                pixelObj.setGreen(num);
+                pixelObj.setBlue(num2);
+            }
+        }
+    }
+
+    public void higherColors()
+    {
+        Pixel[][] pixels = this.getPixels2D();
+        for (Pixel[] rowArray : pixels)
+        {
+            for (Pixel pixelObj : rowArray)
+            {
+                int num = pixelObj.getRed();
+                int num2 = pixelObj.getGreen();
+                int num3 = pixelObj.getBlue();
+                pixelObj.setRed(num+50);
+                pixelObj.setGreen(num2+50);
+                pixelObj.setBlue(num3+50);
+            }
+        }
+    }
+    
+    public void darkerColors()
+    {
+        Pixel[][] pixels = this.getPixels2D();
+        for (Pixel[] rowArray : pixels)
+        {
+            for (Pixel pixelObj : rowArray)
+            {
+                int num = pixelObj.getRed();
+                int num2 = pixelObj.getGreen();
+                int num3 = pixelObj.getBlue();
+                pixelObj.setRed(num-50);
+                pixelObj.setGreen(num2-50);
+                pixelObj.setBlue(num3-50);
+            }
+        }
+    }
+    
+    public void noWhite()
+    {
+      Pixel[][] pixels = this.getPixels2D();
+        for (Pixel[] rowArray : pixels)
+        {
+            for (Pixel pixelObj : rowArray)
+            {
+                int num = pixelObj.getRed();
+                int num2 = pixelObj.getGreen();
+                int num3 = pixelObj.getBlue();
+                if( num == 255 && num2 == 255 && num3 == 255)
+                {
+                pixelObj.setRed(num-50);
+                pixelObj.setGreen(num);
+                pixelObj.setBlue(num);
+            }
+        }  
+    }
+}
+
     public void grayScale()
     {
         Pixel[][] pixels = this.getPixels2D();
@@ -321,26 +392,26 @@ public class Picture extends SimplePicture
             }
         }
     }
-    
+
     /*
     public Picture paste(Picture white, Picture a, int x, int y)
     {
-        Pixel leftPixel = null;
-        Pixel rightPixel = null;
-        Pixel[][] pixels = white.getPixels2D();
-        Pixel[][] pixels1 = a.getPixels2D();
-        int width = pixels1[0].length;
-        for(int i = 0;i<pixels1.length || i<pixels.length; i++)
-        {
-            for(int j = 0; j<width || j<pixels[0].length; j++)
-            {
-                pixels[i][j].setColor(pixels1[j][i].getColor());
-            }
-        }
-        return white;
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    Pixel[][] pixels = white.getPixels2D();
+    Pixel[][] pixels1 = a.getPixels2D();
+    int width = pixels1[0].length;
+    for(int i = 0;i<pixels1.length || i<pixels.length; i++)
+    {
+    for(int j = 0; j<width || j<pixels[0].length; j++)
+    {
+    pixels[i][j].setColor(pixels1[j][i].getColor());
     }
-    */
-    
+    }
+    return white;
+    }
+     */
+
     public Picture paste(Picture white, Picture a, int x, int y)
     {
         Pixel leftPixel = null;
@@ -357,10 +428,8 @@ public class Picture extends SimplePicture
         }
         return white;
     }
-    
-    
-    
 
+    
 
     /* Main method for testing - each class in Java can have a main 
      * method 
@@ -371,7 +440,7 @@ public class Picture extends SimplePicture
         beach.explore();
         beach.zeroBlue();
         beach.explore();
-       
+
     }
 
 } // this } is the end of class Picture, put all new methods before this

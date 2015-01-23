@@ -120,10 +120,38 @@ public class PictureTester
     {
         Picture canvas = new Picture(800, 800);
         Picture alpaca = new Picture("alpaca.jpg");
-        alpaca = alpaca.scale(0.25,0.25);
-        alpaca.explore();
-        canvas.equals(canvas.paste(canvas, alpaca,200,200));
+        Picture alpaca1 = alpaca.scale(0.25,0.25);
+        Picture alpaca2 = alpaca.scale(0.25,0.25);
+        Picture alpaca3 = alpaca.scale(0.25,0.25);
+        Picture alpaca4 = alpaca.scale(0.25,0.25);
+        Picture alpaca5 = alpaca.scale(0.25,0.25);
+        
+        alpaca2.grayScale();
+        alpaca3.keepOnlyBlue();
+        
+        alpaca5.SwitchColors();
+        //alpaca5.explore();
+        canvas.equals(canvas.paste(canvas, alpaca1,0,0));
+        canvas.equals(canvas.paste(canvas, alpaca2,0,799-168));
+        canvas.equals(canvas.paste(canvas, alpaca3,799-199,0));
+        //canvas.equals(canvas.paste(canvas, alpaca4,799-199,799-168));
+        alpaca4.higherColors();
+        canvas.equals(canvas.paste(canvas, alpaca4,100,100));
+        alpaca4.SwitchColors();
+        canvas.equals(canvas.paste(canvas, alpaca4,200,200));
+        alpaca4.SwitchColors();
+        canvas.equals(canvas.paste(canvas, alpaca4,300,300));
+        alpaca4.mirrorVertical();
+        canvas.equals(canvas.paste(canvas, alpaca4,400,400));
+        alpaca4.darkerColors();
+        alpaca4.darkerColors();
+        canvas.equals(canvas.paste(canvas, alpaca4,500,500));
+        alpaca4.SwitchColors();
+        canvas.equals(canvas.paste(canvas, alpaca4,600,600));
+        //canvas.equals(canvas.paste(canvas, alpaca5,300,300));
+        canvas.noWhite();
         canvas.explore();
+        canvas.write("MyCollage.jpg");
     }
 
     /** Main method for testing.  Every class can have a main
