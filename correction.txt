@@ -1,0 +1,29 @@
+int num = 0;
+for(int i = 0; i<numCol*numRows; i++)
+{
+if(i<str.length()){
+letterBlock[num][i] = str.subString(i, i+1);
+}else{
+
+letterBlock[num][i] = "A";}
+
+if(num == numCols-1){
+num = 0;
+}else{
+num++l;
+}
+
+
+
+
+int num = 0;
+
+for(int i = 0; i<numRows; i++)
+{
+for(int j = 0; j<numCol; j++)
+{
+if(num<str.length()){
+letterBlock[i][j] = str.subString(num, num+1);
+num++;
+}else{ letterBlock[i][j] = "A";
+}
